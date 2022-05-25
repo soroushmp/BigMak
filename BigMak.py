@@ -13,7 +13,7 @@ while len(urls) != index:
         link = a['href']
         if 'http' not in link:
             link = urls[0] + link
-        if link not in urls and url in link:
+        if link not in urls and url in link and 'mailto' not in link and 'javascript' not in link and '#' not in link and 'tel' not in link:
             urls.append(link)
             print(link, index)
     index += 1
